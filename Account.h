@@ -9,27 +9,29 @@ using namespace std;
 
 class Account {
 private:
-        static int refinance;
-    public:
+        static double  interestRate;
+    ;
+public:
         string currentAccount;
         string savingsAccount;
         string fixedDeposit;
 
-        double interestRate;
-        void SetCredit()
+        double sum;
+
+        void SetSum()
         {
-            credit = refinance;
+            sum = interestRate;
         }
 
-        static void SetRefinance(int refinance)
+        static void SetInterestRate(double interestRate)
         {
-            Account::refinance = refinance;
+            Account::interestRate = interestRate;
         }
-        static int GetRefinance()
+        static double GetInterestRate()
         {
-            return refinance;
+            return interestRate;
         }
-    };
-    ​
-    int Account::refinance = 1;
+
 };
+
+int Account::interestRate = 1;
