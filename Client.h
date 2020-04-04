@@ -4,16 +4,23 @@
 #pragma once
 
 #include <string>
+#include "Account.h"
 
 
 using namespace std;
 
-class Client {
+class Client:Account {
 private:
-    string accountInterestRate;
+  //  double accountInterestRate = 7.8;
 public:
     string accountHolder;
     string accountType;
+
+    Client(){}
+    Client(double accountInterestRate, string accountType)
+    {
+        double accountInterestRate;
+    }
 
 
 };

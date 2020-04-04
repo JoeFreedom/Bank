@@ -9,7 +9,7 @@ using namespace std;
 
 class Account {
 private:
-        static double  interestRate;
+        static double  acoountInterestRate = 7.8;
     ;
 public:
         string currentAccount;
@@ -20,18 +20,18 @@ public:
 
         void SetSum()
         {
-            sum = interestRate;
+            sum = acoountInterestRate;
         }
 
         static void SetInterestRate(double interestRate)
         {
-            Account::interestRate = interestRate;
+            Account::acoountInterestRate = acoountInterestRate;
         }
         static double GetInterestRate()
         {
-            return interestRate;
+            return acoountInterestRate;
         }
 
 };
 
-int Account::interestRate = 1;
+int Account::acoountInterestRate = 1;

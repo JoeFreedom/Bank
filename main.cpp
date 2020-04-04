@@ -7,5 +7,5 @@ using namespace std;
 
 int main() {
 
-    Account account
+    Account account;
 }
