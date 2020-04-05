@@ -9,17 +9,47 @@
 
 using namespace std;
 
-class Client:Account {
+class Client {
 private:
-  //  double accountInterestRate = 7.8;
+    double startingAmount;
+    double balance;
 public:
-    string accountHolder;
-    string accountType;
 
-    Client(){}
-    Client(double accountInterestRate, string accountType)
+    Client()
     {
-        double accountInterestRate;
+        SetStartingAmount(); // comment required
+    }
+    Client(double startingAmount)
+    {
+        this->startingAmount= startingAmount;
+    }
+    void CreateFirstSavings (int months)
+    {
+        for (int i = 0; i < months; i++)
+        {
+            startingAmount = startingAmount + startingAmount * Account::GetFirstInterestRate(); // comment is required
+        }
+        balance = startingAmount;
+    }
+    void CreateSecondSavings(int months)
+    {
+        for (int i = 0; i < months ; i++)
+        {
+            startingAmount += startingAmount * Account::GetSecondInterestRate();
+        }
+        balance = startingAmount;
+    }
+    double GetBalance()
+    {
+        return balance;
+    }
+
+private:
+    void  SetStartingAmount()
+    {
+        double temp; // comment required
+        cout << "Enter the starting amount: "; cin >> temp;
+        startingAmount = temp;
     }
 
 

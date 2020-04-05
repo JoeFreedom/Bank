@@ -9,29 +9,28 @@ using namespace std;
 
 class Account {
 private:
-        static double  acoountInterestRate = 7.8;
-    ;
+    static double firstInterestRate;
+    static double secondInterestRate;
+
 public:
-        string currentAccount;
-        string savingsAccount;
-        string fixedDeposit;
-
-        double sum;
-
-        void SetSum()
-        {
-            sum = acoountInterestRate;
-        }
-
-        static void SetInterestRate(double interestRate)
-        {
-            Account::acoountInterestRate = acoountInterestRate;
-        }
-        static double GetInterestRate()
-        {
-            return acoountInterestRate;
-        }
+    static void SetFirstInterestRate(double percentage)
+    {
+        firstInterestRate = percentage;
+    }
+    static double GetFirstInterestRate()
+    {
+        return firstInterestRate / 100; //comment required
+    }
+    static void SetSecondInterestRate(double percentage)
+    {
+        secondInterestRate = percentage;
+    }
+    static double GetSecondInterestRate()
+    {
+        return secondInterestRate / 100; //comment required
+    }
 
 };
 
-int Account::acoountInterestRate = 1;
+double Account::firstInterestRate = 1;
+double Account::secondInterestRate = 1;
